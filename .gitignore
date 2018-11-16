@@ -1,0 +1,36 @@
+Debug
+Release
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+.metadata
+
+# Windows image file caches
+Thumbs.db
+*.class
+ehthumbs.db
+target
+classes
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+bin
+
+# Windows shortcuts
+*.lnk
+
