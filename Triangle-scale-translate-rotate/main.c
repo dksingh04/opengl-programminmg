@@ -67,8 +67,14 @@ int main(int argc, const char * argv[]) {
 			0.0f, 0.0f, 0.0f, 1.0f
     };
 
-    //Matrix to rotate the object
+    //Matrix to rotate the object around y axis
     float rotation_matrix[] = {
+    		cos(M_PI/3), 0.0f, -sin(M_PI/3), 0.0f,
+			0.0f, 		 1.0f,  0.0f,        0.0f,
+			-sin(M_PI/3), 0.0f, cos(M_PI/3), 0.0f,
+			0.0f,         0.0f, 0.0f,        1.0f
+
+
 
     };
 
@@ -163,11 +169,13 @@ int main(int argc, const char * argv[]) {
     printf("colorloc %i\n", colorLoc);
     int matrixLocation = glGetUniformLocation(shader_program, "matrix");
     int scale_matrix_loc = glGetUniformLocation(shader_program, "scale_matrix");
+    int rot_matrix_loc = glGetUniformLocation(shader_program, "rot_matrix");
     //assert(colorLoc > -1);
     glUseProgram(shader_program);
     glUniform4f(colorLoc, 1.0f, 0.5f, 0.0f, 1.0f);
     glUniformMatrix4fv(matrixLocation, 1, GL_FALSE, matrix);
     glUniformMatrix4fv(scale_matrix_loc, 1, GL_FALSE, scale_matrix);
+    glUniformMatrix4fv(rot_matrix_loc, 1, GL_FALSE, rotation_matrix);
 
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
