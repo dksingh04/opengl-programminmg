@@ -1,0 +1,29 @@
+GL_LOG_FILE log. local time Mon Nov 26 20:33:38 2018
+
+Starting GLFW 3.2.1 Cocoa NSGL chdir menubar retina dynamicrenderer: AMD Radeon Pro 555X OpenGL Engine
+version: 4.1 ATI-1.68.20
+creating shader from /Users/dsingh/Study/3DProgramming/opengl-programminmg/3DLearning/triangle-virtual-camera/src/test_vs.glsl...
+
+#version 410
+
+layout(location = 0) in vec3 vertex_position;
+layout(location = 1) in vec3 vertex_colour;
+
+uniform mat4 view, proj;
+
+out vec3 colour;
+
+void main() {
+	colour = vertex_colour;
+	gl_Position = proj * view * vec4 (vertex_position, 1.0);
+}shader compiled. index 1
+creating shader from /Users/dsingh/Study/3DProgramming/opengl-programminmg/3DLearning/triangle-virtual-camera/src/test_fs.glsl...
+#version 410
+
+in vec3 colour;
+out vec4 frag_colour;
+
+void main() {
+	frag_colour = vec4 (colour, 1.0);
+}shader compiled. index 2
+program 3 GL_VALIDATE_STATUS = GL_TRUE
