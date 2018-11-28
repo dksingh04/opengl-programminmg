@@ -2,7 +2,7 @@
  * mathfuncs.cpp
  *
  *  Created on: Nov 25, 2018
- *      Author: dsingh
+ *  Author: dsingh
  */
 
 #include "mathfuncs.h"
@@ -621,7 +621,6 @@ versor slerp( versor &q, versor &r, float t ) {
 	// http://stackoverflow.com/questions/2886606/flipping-issue-when-interpolating-rotations-using-quaternions
 	// if dot product is negative then one quaternion should be negated, to make
 	// it take the short way around, rather than the long way
-	// yeah! and furthermore Susan, I had to recalculate the d.p. after this
 	if ( cos_half_theta < 0.0f ) {
 		for ( int i = 0; i < 4; i++ ) {
 			q.q[i] *= -1.0f;
